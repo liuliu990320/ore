@@ -35,9 +35,13 @@ if ! command -v solana-keygen &> /dev/null; then
 fi
 
 # 创建 Solana 密钥对
-echo "正在创建 Solana 密钥对..."
-solana-keygen new --derivation-path m/44'/501'/0'/0' --force --no-bip39-passphrase | tee solana-keygen-output.txt
-
+# 检查文件 solana-keygen-output.txt 是否存在
+if [ ! -f "solana-keygen-output.txt" ]; then
+    # 如果文件不存在，执行 solana-keygen new 命令并输出到文件
+    solana-keygen new --derivation-path m/44'/501'/0'/0' --force --no-bip39-passphrase | tee solana-keygen-output.txt
+else
+    echo "文件 solana-keygen-output.txt 已存在，不创建新的密钥."
+fi
 
 # 安装 Ore CLI
 echo "正在安装 Ore CLI..."
@@ -489,8 +493,8 @@ function main_menu() {
         10) cliam_multiple ;;
         11) rerun_rpc ;;
         esac
-        echo "按任意键返回主菜单..."
-        read -n 1
+#        echo "按任意键返回主菜单..."
+#        read -n 1
     done
 }
 
