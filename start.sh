@@ -38,20 +38,20 @@ fi
 echo "正在创建 Solana 密钥对..."
 solana-keygen new --derivation-path m/44'/501'/0'/0' --force | tee solana-keygen-output.txt
 
-# 显示提示信息，要求用户确认已备份
-#echo "请确保你已经备份了上面显示的助记词和私钥信息。"
-#echo "请向pubkey充值sol资产，用于挖矿gas费用。"
+ 显示提示信息，要求用户确认已备份
+echo "请确保你已经备份了上面显示的助记词和私钥信息。"
+echo "请向pubkey充值sol资产，用于挖矿gas费用。"
 
-#echo "备份完成后，请输入 'yes' 继续："
+echo "备份完成后，请输入 'yes' 继续："
 
-#read -p "" user_confirmation
+read -p "" user_confirmation
 
-#if [[ "$user_confirmation" == "yes" ]]; then
-#    echo "确认备份。继续执行脚本..."
-#else
-#    echo "脚本终止。请确保备份你的信息后再运行脚本。"
-#    exit 1
-#fi
+if [[ "$user_confirmation" == "yes" ]]; then
+    echo "确认备份。继续执行脚本..."
+else
+    echo "脚本终止。请确保备份你的信息后再运行脚本。"
+    exit 1
+fi
 
 # 安装 Ore CLI
 echo "正在安装 Ore CLI..."
