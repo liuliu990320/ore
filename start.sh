@@ -493,8 +493,8 @@ function main_menu() {
         10) cliam_multiple ;;
         11) rerun_rpc ;;
         esac
-#        echo "按任意键返回主菜单..."
-#        read -n 1
+       echo "按任意键返回主菜单..."
+       read -n 1
     done
 }
 
