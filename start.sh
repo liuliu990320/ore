@@ -481,20 +481,20 @@ function main_menu() {
         read -p "请输入选项（1-11）: " OPTION
 
         case $OPTION in
-        1) install_node ;;
-        2) export_wallet ;;
-        3) start ;;
-        4) view_rewards ;;
-        5) claim_rewards ;;
-        6) check_logs ;;
-        7) multiple ;;
-        8) lonely ;;
-        9) check_multiple ;;
-        10) cliam_multiple ;;
-        11) rerun_rpc ;;
+        1) install_node ; break ;;
+        2) export_wallet ; break ;;
+        3) start ; break ;;
+        4) view_rewards ; break ;;
+        5) claim_rewards ; break ;;
+        6) check_logs ; break ;;
+        7) multiple ; break ;;
+        8) lonely ; break ;;
+        9) check_multiple ; break ;;
+        10) cliam_multiple ; break ;;
+        11) rerun_rpc ; break ;;
         esac
-       echo "按任意键返回主菜单..."
-       read -n 1
+#        echo "按任意键返回主菜单..."
+#        read -n 1
     done
 }
 
